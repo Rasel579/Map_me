@@ -1,0 +1,5 @@
+rootProject.name = "Map_Me"
+include ':app'
+include ':domain'
+include ':data'
+include ':ui'
