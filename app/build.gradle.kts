@@ -40,10 +40,24 @@ android {
     }
 
     dependencies {
+        /** Modules **/
+        implementation(project(Modules.MODULE_DATA))
+        implementation(project(Modules.MODULE_DOMAIN))
+        implementation(project(Modules.MODULE_UI))
+        /** Koin **/
+        implementation(Koin.CORE)
+        implementation(Koin.ANDROID)
+        implementation(Koin.ANDROID_COMPAT)
+
+        /**ViewBinding Delegate**/
+        implementation(ViewBindingDelegate.DELEGATE)
+
         implementation(Kotlin.CORE)
         implementation(Design.APPCOMPAT)
         implementation(Design.MATERIAL)
         implementation(Design.CONSTRAINT_LAYOUT)
+        implementation(Design.NAVIGATION_FRAGMENT)
+        implementation(Design.NAVIGATION_UI_KTX)
         testImplementation(Tests.JUNIT)
         androidTestImplementation(Tests.TEST_EXT_JUNIT)
         androidTestImplementation(Tests.ESPRESSO)

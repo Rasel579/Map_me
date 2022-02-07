@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Map_Me</string>
+    <string name="title_nav_header">Maps Me</string>
+    <string name="main_item_menu">Main</string>
+    <string name="labels_menu_item">Labels</string>
+    <string name="map_title_toolbar">Map Title</string>
 </resources>

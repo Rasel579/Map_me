@@ -45,12 +45,15 @@ dependencies {
     implementation(Design.APPCOMPAT)
     implementation(Design.MATERIAL)
     implementation(Design.CONSTRAINT_LAYOUT)
+    implementation(Design.NAVIGATION_FRAGMENT)
+    implementation(Design.NAVIGATION_UI_KTX)
 
     // Retrofit
     implementation(Retrofit2.RETROFIT)
     implementation(Retrofit2.CONVERTER_JSON)
     implementation(Retrofit2.COROUTINES_ADAPTER)
     implementation(Retrofit2.LOGGING_INTERCEPTOR)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     //Tests
     testImplementation(Tests.JUNIT)
