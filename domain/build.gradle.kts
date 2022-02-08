@@ -1,14 +1,19 @@
 plugins {
-    id("java-library")
-    id("org.jetbrains.kotlin.jvm")
+    id("com.android.library")
+    kotlin("android")
+    kotlin("kapt")
 }
 
-java {
-    sourceCompatibility = Config.java_version
-    targetCompatibility = Config.java_version
-}
+android {
+    compileSdk = Config.COMPILE_SDK
 
+    defaultConfig {
+        minSdk = Config.MIN_SDK_VERSION
+        targetSdk = Config.TARGET_SDK
+    }
+}
 dependencies {
+
     // Kotlin
     implementation(Kotlin.STDLIB)
 
@@ -17,6 +22,13 @@ dependencies {
     implementation(Retrofit2.CONVERTER_JSON)
     implementation(Retrofit2.COROUTINES_ADAPTER)
     implementation(Retrofit2.LOGGING_INTERCEPTOR)
+
+    //GoogleMap
+    implementation(GoogleMaps.googleMap)
+
+    //Gson
+    implementation(Retrofit2.CONVERTER_JSON)
+
 
     // Coroutines
     implementation(Coroutines.ANDROID)

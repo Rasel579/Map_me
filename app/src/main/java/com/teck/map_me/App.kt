@@ -12,7 +12,10 @@ class App : Application() {
             androidContext(applicationContext)
             modules(
                 listOf(
-                    Di.repositoriesModule()
+                    Di.dataSourceModules(),
+                    Di.repositoriesModule(),
+                    Di.usecasesModule(),
+                    Di.viewModelsModules()
                 )
             )
         }

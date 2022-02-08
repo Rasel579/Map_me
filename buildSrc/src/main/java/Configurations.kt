@@ -62,6 +62,10 @@ object LibVersion {
     // SwipeRefreshLayout
     const val SWIPE_REFRESH_VERSION = "1.1.0"
 
+    //GoogleMap
+    const val GOOGLE_MAP_VERSION_SECRETS = "2.0.0"
+    const val GOOGLE_MAP_VERSION = "18.0.2"
+
     // Tests
     const val JUNIT_VERSION = "4.13.2"
     const val TEST_EXT_JUNIT_VERSION = "1.1.3"
@@ -131,6 +135,11 @@ object Room {
     const val KTX = "androidx.room:room-ktx:${LibVersion.ROOM_VERSION}"
     const val RX_JAVA = "androidx.room:room-rxjava2:${LibVersion.ROOM_VERSION}"
     const val COMPILER = "androidx.room:room-compiler:${LibVersion.ROOM_VERSION}"
+}
+
+object GoogleMaps {
+    const val googleMapSecrets = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:${LibVersion.GOOGLE_MAP_VERSION_SECRETS}"
+    const val googleMap = "com.google.android.gms:play-services-maps:${LibVersion.GOOGLE_MAP_VERSION}"
 }
 
 object Koin {
