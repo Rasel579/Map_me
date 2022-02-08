@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -30,6 +31,10 @@ android {
     kotlinOptions {
         jvmTarget = Config.JVM_TARGET
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -42,15 +47,29 @@ dependencies {
     implementation(Kotlin.STDLIB)
 
     // Design
-    implementation(Design.APPCOMPAT)
     implementation(Design.MATERIAL)
     implementation(Design.CONSTRAINT_LAYOUT)
+    implementation(Design.NAVIGATION_FRAGMENT)
+    implementation(Design.NAVIGATION_UI_KTX)
+
+    //View Bindig
+    implementation(ViewBindingDelegate.DELEGATE)
+
 
     // Retrofit
     implementation(Retrofit2.RETROFIT)
     implementation(Retrofit2.CONVERTER_JSON)
     implementation(Retrofit2.COROUTINES_ADAPTER)
     implementation(Retrofit2.LOGGING_INTERCEPTOR)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+
+    //GoogleMap
+    implementation(GoogleMaps.googleMap)
+
+    //Koin
+    implementation(Koin.CORE)
+    implementation(Koin.ANDROID)
+    implementation(Koin.ANDROID_COMPAT)
 
     //Tests
     testImplementation(Tests.JUNIT)

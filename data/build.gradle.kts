@@ -14,7 +14,6 @@ android {
 }
 
 dependencies {
-
     //Modules
     implementation(project(Modules.MODULE_DOMAIN))
 
@@ -22,10 +21,9 @@ dependencies {
     implementation(Kotlin.CORE)
     implementation(Kotlin.STDLIB)
 
-    // Design
-    implementation(Design.APPCOMPAT)
-    implementation(Design.MATERIAL)
-    implementation(Design.CONSTRAINT_LAYOUT)
+
+    //GoogleMap
+    implementation(GoogleMaps.googleMap)
 
     // Retrofit
     implementation(Retrofit2.RETROFIT)
