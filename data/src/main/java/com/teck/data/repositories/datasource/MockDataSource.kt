@@ -1,6 +1,7 @@
 package com.teck.data.repositories.datasource
 
 import android.content.Context
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.teck.domain.models.Place
@@ -26,4 +27,7 @@ class MockDataSource (private val context: Context, private val resources: Int):
         })
     }.flowOn(Dispatchers.IO)
     override fun getData(): Flow<List<Place>> = read()
+    override fun saveData(place: Place) {
+        Log.e("Data Source Sace", place.toString())
+    }
 }

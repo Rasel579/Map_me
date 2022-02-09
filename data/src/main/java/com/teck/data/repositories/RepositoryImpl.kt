@@ -7,4 +7,5 @@ import kotlinx.coroutines.flow.Flow
 
 class RepositoryImpl(private val dataSource: DataSource) : Repository {
     override fun getData(): Flow<List<Place>> = dataSource.getData()
+    override fun saveData(place: Place) = dataSource.saveData(place)
 }
