@@ -23,10 +23,10 @@ class MapImpl(
         }
     }
 
-    override fun addMarkers(placesData: List<Place>) {
+    override fun addMarkers(placeData: List<Place>) {
         supportMapFragment?.getMapAsync { googleMap ->
-            placesData.forEach { place ->
-                val marker = googleMap?.addMarker(
+            placeData.forEach { place ->
+                val marker = googleMap.addMarker(
                     MarkerOptions().title(place.name)
                         .position(place.latLng)
                 )
