@@ -5,4 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface Repository {
     fun getData() : Flow<List<Place>>
+    fun saveData(place: Place)
 }

@@ -11,7 +11,8 @@ import com.teck.domain.models.Place
 
 class MapImpl(
     private val fragmentManager: FragmentManager,
-    private val infoMarkerGoogleAdapter: GoogleMap.InfoWindowAdapter
+    private val infoMarkerGoogleAdapter: GoogleMap.InfoWindowAdapter,
+    private val viewListener: ViewListener
 ) : Map {
     private var supportMapFragment: SupportMapFragment? = null
     override fun initUiSettings(@IdRes id: Int) {
@@ -51,6 +52,14 @@ class MapImpl(
                 googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds.build(), 100))
             }
             googleMap.setOnMapLongClickListener {
+                viewListener.saveData(
+                    Place(
+                        name = "new",
+                        latLng = it,
+                        address = "new address",
+                        rating = 0f
+                    )
+                )
                 googleMap.addMarker(
                     MarkerOptions()
                         .position(it)
@@ -58,5 +67,6 @@ class MapImpl(
             }
         }
     }
+
 
 }

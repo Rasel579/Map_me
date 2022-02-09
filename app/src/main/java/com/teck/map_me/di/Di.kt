@@ -6,8 +6,12 @@ import com.teck.data.repositories.datasource.MockDataSource
 import com.teck.domain.models.Place
 import com.teck.domain.repository.Repository
 import com.teck.domain.usecases.GetDataUseCase
+import com.teck.domain.usecases.InputUseCase
 import com.teck.domain.usecases.OutputUseCase
+import com.teck.domain.usecases.SaveDataUseCase
 import com.teck.map_me.R
+import com.teck.ui.labels.LabelsFragment
+import com.teck.ui.labels.LabelsViewModel
 import com.teck.ui.map.MapFragment
 import com.teck.ui.map.MapViewModel
 import kotlinx.coroutines.flow.Flow
@@ -25,12 +29,21 @@ object Di {
         factory<OutputUseCase<Flow<List<Place>>>> {
             GetDataUseCase(get())
         }
+
+        factory<InputUseCase<Place>> {
+            SaveDataUseCase(get())
+        }
     }
 
     fun viewModelsModules() = module {
         scope<MapFragment> {
             viewModel{
-                MapViewModel(get())
+                MapViewModel(get(), get())
+            }
+        }
+        scope<LabelsFragment>{
+            viewModel{
+                LabelsViewModel(get())
             }
         }
     }
