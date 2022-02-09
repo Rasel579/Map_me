@@ -10,6 +10,7 @@ import com.teck.domain.usecases.OutputUseCase
 import com.teck.map_me.R
 import com.teck.ui.map.MapFragment
 import com.teck.ui.map.MapViewModel
+import kotlinx.coroutines.flow.Flow
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -21,7 +22,7 @@ object Di {
         single<Repository> { RepositoryImpl(get())}
     }
     fun usecasesModule() = module {
-        factory<OutputUseCase<List<Place>>> {
+        factory<OutputUseCase<Flow<List<Place>>>> {
             GetDataUseCase(get())
         }
     }

@@ -1,4 +1,4 @@
-package com.teck.ui.map.adapters
+package com.teck.ui.map.libs.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
