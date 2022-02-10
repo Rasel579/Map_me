@@ -8,4 +8,5 @@ interface Map {
     fun addMarkers(placeData : List<Place>)
     fun initMyLocation()
     fun initListeners(placeData : List<Place>)
+    fun onMapListener()
 }

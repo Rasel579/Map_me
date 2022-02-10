@@ -14,26 +14,31 @@ android {
 }
 dependencies {
 
-    // Kotlin
+    /** Kotlin **/
     implementation(Kotlin.STDLIB)
 
-    // Retrofit
+    /** Retrofit **/
     implementation(Retrofit2.RETROFIT)
     implementation(Retrofit2.CONVERTER_JSON)
     implementation(Retrofit2.COROUTINES_ADAPTER)
     implementation(Retrofit2.LOGGING_INTERCEPTOR)
 
-    //GoogleMap
+    /** GoogleMap **/
     implementation(GoogleMaps.googleMap)
 
-    //Gson
+    /** Gson **/
     implementation(Retrofit2.CONVERTER_JSON)
 
+    /**Room**/
+    kapt(Room.COMPILER)
+    implementation(Room.RUN_TIME)
+    implementation(Room.KTX)
 
-    // Coroutines
+
+    /** Coroutines **/
     implementation(Coroutines.ANDROID)
     implementation(Coroutines.CORE)
 
-    //Tests
+    /** Tests **/
     testImplementation(Tests.JUNIT)
 }

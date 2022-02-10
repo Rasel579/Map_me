@@ -38,6 +38,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -56,6 +57,10 @@ dependencies {
     /**Google Map**/
     implementation(GoogleMaps.googleMap)
 
+    /**Room**/
+    kapt(Room.COMPILER)
+    implementation(Room.RUN_TIME)
+    implementation(Room.KTX)
 
     implementation(Kotlin.CORE)
     implementation(Design.APPCOMPAT)
@@ -66,6 +71,7 @@ dependencies {
     testImplementation(Tests.JUNIT)
     androidTestImplementation(Tests.TEST_EXT_JUNIT)
     androidTestImplementation(Tests.ESPRESSO)
+
 }
 secrets {
     defaultPropertiesFileName = "local.properties.defaults"

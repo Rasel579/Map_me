@@ -3,50 +3,84 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:rippleColor="@color/design_default_color_primary"
     app:cardCornerRadius="10dp"
     android:orientation="vertical">
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <RelativeLayout
         android:id="@+id/label_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/title_edit_text"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title_input_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:maxLength="12"
-            android:gravity="center"
-            tools:text="Title" />
-        <EditText
-            android:id="@+id/adress_edit_text"
+            app:helperText="Title"
+            app:counterMaxLength="10"
+            android:layout_centerVertical="true"
+            app:helperTextEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxLength="10"
+                android:gravity="center"
+                tools:text="Title" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/address_input_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:maxLength="16"
-            android:gravity="center"
-            tools:text="123 Main St." />
-        <EditText
-            android:id="@+id/rating_edit_text"
+            android:layout_toStartOf="@+id/rating_input_layout"
+            android:layout_toRightOf="@+id/title_input_layout"
+            app:helperText="Address"
+            app:helperTextEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/adress_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:maxLength="10"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="123 Main St." />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/rating_input_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:maxLength="12"
-            android:gravity="center"
-            tools:text="Rating: 4.3" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:layout_toStartOf="@+id/save_btn"
+            app:helperText="Rating"
+            app:helperTextEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rating_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:maxLength="2"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Rating: 4.3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="SAVE"/>
+    </RelativeLayout>
 
 
 </com.google.android.material.card.MaterialCardView>

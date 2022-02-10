@@ -20,5 +20,12 @@ class InfoMarkerGoogleAdapter(
         viewBinding?.ratingTextview?.text = "Rating: ${place?.rating.toString()}"
         return viewBinding?.root
     }
-    override fun getInfoWindow(marker: Marker): View? = null
+    override fun getInfoWindow(marker: Marker): View?  {
+        val place = marker.tag as? Place?
+        viewBinding = MarkerInfoLayoutBinding.inflate(LayoutInflater.from(context))
+        viewBinding?.titleTextview?.text = place?.name
+        viewBinding?.adressTextview?.text = place?.address
+        viewBinding?.ratingTextview?.text = "Rating: ${place?.rating.toString()}"
+        return viewBinding?.root
+    }
 }
