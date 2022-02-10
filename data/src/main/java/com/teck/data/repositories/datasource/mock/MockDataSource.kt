@@ -1,9 +1,10 @@
-package com.teck.data.repositories.datasource
+package com.teck.data.repositories.datasource.mock
 
 import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.teck.data.repositories.datasource.DataSource
 import com.teck.domain.models.Place
 import com.teck.domain.models.PlaceResponse
 import com.teck.domain.models.toPlace
@@ -27,7 +28,16 @@ class MockDataSource (private val context: Context, private val resources: Int):
         })
     }.flowOn(Dispatchers.IO)
     override fun getData(): Flow<List<Place>> = read()
-    override fun saveData(place: Place) {
+    override suspend fun saveData(place: Place) {
         Log.e("Data Source Sace", place.toString())
+    }
+
+
+    override suspend fun update(place: Place) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun delete(place: Place) {
+        TODO("Not yet implemented")
     }
 }
